@@ -92,6 +92,15 @@ def validate_agent(q_table_file, episodes=100, max_steps=1000, render=False):
     print(f"Average Reward: {avg_reward:.2f}")
     print(f"Average Steps: {avg_steps:.2f}")
     print(f"Average Position Reached: {avg_position:.4f}")
+
+    # Save results to file
+    results_file = q_table_file.replace(".csv", "_validation_results.txt")
+    with open(results_file, "w") as f:
+        f.write("Validation Results:\n")
+        f.write(f"Success Rate: {success_rate:.2f}%\n")
+        f.write(f"Average Reward: {avg_reward:.2f}\n")
+        f.write(f"Average Steps: {avg_steps:.2f}\n")
+        f.write(f"Average Position Reached: {avg_position:.4f}\n")
     
     env.close()
     return success_rate, avg_reward, avg_steps, avg_position
