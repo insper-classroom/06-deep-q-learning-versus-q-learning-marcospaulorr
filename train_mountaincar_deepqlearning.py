@@ -21,9 +21,9 @@ def create_mountaincar_model(input_shape, action_size):
     Create a neural network model for the MountainCar environment
     """
     model = Sequential()
-    model.add(Dense(64, activation=relu, input_dim=input_shape))
-    model.add(Dense(64, activation=relu))
-    model.add(Dense(action_size, activation=linear))
+    model.add(Dense(24, activation='relu', input_dim=input_shape))
+    model.add(Dense(24, activation='relu'))
+    model.add(Dense(action_size, activation='linear'))
     model.compile(loss='mse', optimizer=Adam(learning_rate=0.001))
     return model
 

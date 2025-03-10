@@ -1,0 +1,27 @@
+# Ambientes virtuais
+venv/
+venv_py312/
+env/
+ENV/
+*.venv
+
+# Arquivos Python compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribuição / empacotamento
+*.egg-info/
+dist/
+build/
+
+# Outros
+.DS_Store
+.env
+.idea/
+.vscode/
+
+# Modelos e logs
+*.h5
+*.keras
+*.log

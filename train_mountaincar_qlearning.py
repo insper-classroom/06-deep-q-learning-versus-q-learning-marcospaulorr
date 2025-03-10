@@ -160,9 +160,9 @@ def run_multiple_experiments(runs=5, episodes=5000, steps=1000):
     
     for run in range(1, runs+1):
         print(f"\n=== Starting Q-Learning Run {run}/{runs} ===")
-        rewards, steps, _ = train_agent(run_id=run, max_episodes=episodes, max_steps=steps)
+        rewards, steps_history, _ = train_agent(run_id=run, max_episodes=episodes, max_steps=steps)
         all_rewards.append(rewards)
-        all_steps.append(steps)
+        all_steps.append(steps_history)
     
     all_rewards = np.array(all_rewards)
     all_steps = np.array(all_steps)
